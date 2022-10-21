@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'cute-cat.png' %}"
+    />
+  </head>
+  <body class="admin-body">
+    <div class="navbar">
+      <p class="greet-navbar">Hello, {{request.user}}</p>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'logout' %}">Logout</a>
+    </div>
+
+    <div class="user_card_create">
+      <div class="title-create">
+        <h1>{{time}}</h1>
+      </div>
+      <div class="form_container">
+        <form method="POST" action="">
+          {% csrf_token %}
+          <div class="input-group">
+            <p>Your Cats {{form.name.label}}</p>
+            <p>{{form.name}}</p>
+          </div>
+          <div class="input-group">
+            <p>Date {{form.missing.label}}</p>
+            <p>{{form.missing}}</p>
+          </div>
+          <div class="input-group">
+            <p>{{form.description.label}} Of Your Cat</p>
+            <p>{{form.description}}</p>
+          </div>
+          <div class="input-group">
+            <p>Your {{form.contact.label}} Info</p>
+            <p>{{form.contact}}</p>
+          </div>
+          <div class="create_container">
+            <input class="login_btn" type="submit" value="{{time}}" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

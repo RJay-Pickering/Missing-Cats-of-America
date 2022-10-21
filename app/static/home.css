@@ -1,0 +1,79 @@
+.admin_body {
+  background-color: black;
+}
+
+.user_body {
+  background-color: rgba(73, 73, 184, 0.966);
+}
+
+.greet-navbar {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  padding-bottom: 0px;
+  padding-top: 6px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: blueviolet;
+  position: sticky;
+  top: 0;
+  margin: -10px;
+  margin-top: -20px;
+}
+
+.navbar a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+.info-table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid black;
+  background-color: orange;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: black;
+}
+
+.header-missing {
+  color: orange;
+  padding-top: 25px;
+}
+
+.fortnite {
+  flex-wrap: wrap;
+}
+
+.form-title {
+  color: #fff;
+}

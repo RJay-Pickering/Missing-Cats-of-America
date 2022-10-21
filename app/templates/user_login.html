@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Cat</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'cute-cat.png' %}"
+    />
+  </head>
+  <body>
+    <div class="user_card_login">
+      <div class="title-login">
+        <h1>LOGIN</h1>
+      </div>
+      <div class="form_container">
+        <form method="POST" action="">
+          {% csrf_token %}
+          <div class="input-group">
+            Username
+            <p></p>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username..."
+              class="form-control"
+            />
+          </div>
+
+          <div class="input-group">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <p>Password</p>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password..."
+              class="form-control"
+            />
+            <p></p>
+          </div>
+
+          <div class="login_container">
+            <input class="login_btn" type="submit" value="Login" />
+          </div>
+        </form>
+      </div>
+
+      {% for message in messages %}
+      <p id="messages">{{message}}</p>
+      {% endfor %}
+
+      <div>
+        <div class="login_to_register">
+          Don't have an account?
+          <a href="{% url 'userregister' %}">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

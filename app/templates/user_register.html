@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Cat</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'cute-cat.png' %}"
+    />
+  </head>
+  <body>
+    <div class="user_card_register">
+      <div class="title-register">
+        <h1>REGISTER ACCOUNT</h1>
+      </div>
+      <div class="form_container">
+        <form method="POST" action="">
+          {% csrf_token %}
+          <div class="input-group">
+            {{form.username.label}}
+            <p></p>
+            {{form.username}}
+          </div>
+          <div class="input-group">
+            <p>{{form.email.label}}</p>
+            {{form.email}}
+          </div>
+          <div class="input-group">
+            <p>{{form.password1.label}}</p>
+            {{form.password1}}
+          </div>
+          <div class="input-group">
+            <p>{{form.password2.label}}</p>
+            {{form.password2}}
+            <p></p>
+          </div>
+          <div class="login_container">
+            <input class="login_btn" type="submit" value="Register Account" />
+          </div>
+        </form>
+      </div>
+
+      {{form.errors}}
+
+      <div>
+        <div class="register_to_login">
+          Already have an account?
+          <a href="{% url 'userlogin' %}">Login</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

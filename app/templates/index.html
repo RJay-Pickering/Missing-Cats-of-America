@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Cat</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'cute-cat.png' %}"
+    />
+  </head>
+  <body class="admin_body">
+    <div class="navbar">
+      <p class="greet-navbar">hello, {{request.user}}</p>
+      <a href="{% url 'create' %}">Create</a>
+      <a href="{% url 'logout' %}">Logout</a>
+    </div>
+    {% comment %} <----------------navbar----------------> {% endcomment %}
+    <div class="col-md-7">
+      <div class="card card-body">
+        <h3 class="header-missing"><center>Missing Cats</center></h3>
+        <table class="info-table">
+          {% if kats is not None %}
+          <tr>
+            <th>Cat Name</th>
+            <th>Description</th>
+            <th>Contact Info</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+          {% endif %}
+          {% for cats in kats %}
+          <tr>
+            <td>{{cats.name}}</td>
+            <td class="fortnite">{{cats.description}}</td>
+            <td>{{cats.contact}}</td>
+            <td><a href="{% url 'update' cats.id %}">Update</a></td>
+            <td><a href="{% url 'delete' cats.id %}">Delete</a></td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

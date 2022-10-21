@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete</title>
+    <link rel="stylesheet" href="{% static 'delete.css' %}" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'cute-cat.png' %}"
+    />
+  </head>
+  <body>
+    <p>Are you sure you want to delete {{item}}?</p>
+    <form action="{% url 'delete' item.id %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" name="Confirm" />
+      <a href="{% url 'home' %}">Cancel</a>
+    </form>
+  </body>
+</html>
