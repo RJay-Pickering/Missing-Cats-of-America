@@ -1,26 +1,9 @@
+/* 10 spaces in between each category of css */
 body {
   padding: 0;
   height: 100%;
   background-image: url("5553379.png");
   background-color: black;
-}
-.user_card_login {
-  width: 350px;
-  margin-top: 225px;
-  margin-left: 525px;
-  margin-bottom: auto;
-  background: #fd7f20;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 5px;
 }
 
 .user_card_register {
@@ -61,27 +44,8 @@ body {
   border-radius: 5px;
 }
 
-.form_container {
-  margin-top: 20px;
-  align-content: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .form-title {
   color: #fff;
-}
-.login_btn {
-  width: 100%;
-  background: #fc2e20;
-  color: whitesmoke;
-}
-.login_btn:focus {
-  box-shadow: none;
-  outline: 0px;
-}
-.login_container {
-  padding: 0 2rem;
 }
 
 .create_container {
@@ -89,29 +53,15 @@ body {
   padding-bottom: 10px;
 }
 
-.input-group {
-  border: 0;
-  border-radius: 0.25rem 0 0 0.25rem;
-  margin-left: 100px;
-}
 .input_user,
 .input_pass:focus {
   box-shadow: none;
   outline: 0px;
 }
 
-.login_to_register {
-  margin-left: 75px;
-  margin-top: 15px;
-}
-
 .register_to_login {
   margin-left: 75px;
   margin-top: 15px;
-}
-
-.title-login {
-  margin-left: 130px;
 }
 
 .title-register {
@@ -178,3 +128,77 @@ body {
 .header-missing {
   color: whitesmoke;
 }
+
+
+
+
+
+
+
+
+
+
+/* Login screen */
+.user_card_login {
+  width: 350px;
+  background: #fd7f20;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  padding: 10px;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  border-radius: 5px;
+}
+
+/* .title-login {
+  margin-left: 130px;
+} */
+
+.form_container {
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-group {
+  border: 0;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+/* .login_container {
+  width: 10vh;
+} */
+
+.login_btn {
+  padding: 5px;
+  background: #fc2e20;
+  color: whitesmoke;
+}
+
+.login_btn:focus {
+  box-shadow: none;
+  outline: 0px;
+}
+
+.login_btn:hover {
+  cursor: pointer;
+}
+
+.login_to_register {
+  margin-top: 15px;
+}
+
+.login_to_register a {
+  text-decoration: none;
+  color: black;
+  transition: 0.5s;
+}
+
+.login_to_register a:hover {
+  color: #fc2e20;
+}
+/* End of Login screen */
