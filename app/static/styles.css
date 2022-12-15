@@ -3,27 +3,8 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-image: url("5553379.png");
+  /* background-image: url("5553379.png"); */
   background-color: black;
-}
-
-.user_card_register {
-  width: 350px;
-  margin-top: 155px;
-  margin-left: 530px;
-  margin-bottom: auto;
-  background: #fd7f20;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 5px;
 }
 
 .user_card_create {
@@ -58,16 +39,6 @@ body {
 .input_pass:focus {
   box-shadow: none;
   outline: 0px;
-}
-
-.register_to_login {
-  margin-left: 75px;
-  margin-top: 15px;
-}
-
-.title-register {
-  padding-left: 10px;
-  padding-bottom: 0px;
 }
 
 .title-create {
@@ -138,6 +109,26 @@ body {
 
 
 
+/* UNIVERSAL CODE (USED IN MULTIPLE HTML PAGES) */
+.form_container {
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-group {
+  font-size: 2.5vh;
+}
+/* end of UNIVERSAL CODE (USED IN MULTIPLE HTML PAGES) */
+
+
+
+
+
+
+
+
+
 
 /* Login screen */
 .login_cat_body{
@@ -149,7 +140,8 @@ body {
 }
 
 .user_card_login {
-  width: 350px;
+  width: 50vh;
+  height: max-content;
   background: #fd7f20;
   display: flex;
   flex-direction: column;
@@ -161,27 +153,20 @@ body {
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
-/* .title-login {
-  margin-left: 130px;
-} */
-
-.form_container {
-  align-content: center;
-  flex-direction: column;
-  justify-content: center;
+.title-login {
+  font-size: 3vh;
 }
 
-.input-group {
-  border: 0;
-  border-radius: 0.25rem 0 0 0.25rem;
+.above-the-form{
+  margin-top: 0;
 }
 
-/* .login_container {
-  width: 10vh;
-} */
+.login_container {
+  margin-top: 2.5vh;
+}
 
 .login_btn {
   padding: 5px;
@@ -196,10 +181,13 @@ body {
 
 .login_btn:hover {
   cursor: pointer;
+  background-color: whitesmoke;
+  color: #fc2e20;
 }
 
 .login_to_register {
-  margin-top: 15px;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
 }
 
 .login_to_register a {
@@ -209,6 +197,131 @@ body {
 }
 
 .login_to_register a:hover {
-  color: #fc2e20;
+  color: whitesmoke;
 }
 /* End of Login screen */
+
+
+
+
+
+
+
+
+
+
+/* register screen */
+.register_cat_body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.user_card_register {
+  width: 50vh;
+  height: max-content;
+  background: #fd7f20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  border-radius: 10px;
+}
+
+.title-register {
+  font-size: 2.5vh;
+}
+
+.register_container {
+  margin-top: 2.5vh;
+}
+
+.register_btn {
+  padding: 5px;
+  background: #fc2e20;
+  color: whitesmoke;
+}
+
+.register_btn:focus {
+  box-shadow: none;
+  outline: 0px;
+}
+
+.register_btn:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: #fc2e20;
+}
+
+.register_to_login {
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+}
+
+.register_to_login a {
+  text-decoration: none;
+  color: black;
+  transition: 0.5s;
+}
+
+.register_to_login a:hover {
+  color: whitesmoke;
+}
+/* end of register screen */
+
+
+
+
+
+
+
+
+
+
+/* media screen sizes */
+@media screen and (min-width: 1270px) {
+  body {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("5553379.png");
+    background-color: black;
+  }
+}
+
+@media screen and (max-width: 539px) {
+  .user_card_login {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .title-login h1 {
+    margin-top: 0;
+  }
+  .login_to_register {
+    margin-bottom: 0;
+  }
+
+  .user_card_register {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .title-register h1 {
+    margin-top: 0;
+  }
+  .register_to_login {
+    margin-bottom: 0;
+  }
+}
+/* end of media screen sizes */

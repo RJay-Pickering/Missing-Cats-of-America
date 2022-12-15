@@ -22,8 +22,7 @@
         <form method="POST" action="">
           {% csrf_token %}
           <div class="input-group">
-            Username
-            <p></p>
+            <p class="above-the-form">Username</p>
             <input
               type="text"
               name="username"
@@ -33,9 +32,6 @@
           </div>
 
           <div class="input-group">
-            <div class="input-group-append">
-              <span class="input-group-text"><i class="fas fa-key"></i></span>
-            </div>
             <p>Password</p>
             <input
               type="password"
@@ -43,7 +39,6 @@
               placeholder="Password..."
               class="form-control"
             />
-            <p></p>
           </div>
 
           <div class="login_container">
