@@ -1,48 +1,12 @@
 /* 10 spaces in between each category of css */
-body {
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  /* background-image: url("5553379.png"); */
-  background-color: black;
-}
-
-.user_card_create {
-  width: 350px;
-  margin-top: 135px;
-  margin-left: 525px;
-  margin-bottom: auto;
-  background: #fd7f20;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 5px;
-}
-
 .form-title {
   color: #fff;
-}
-
-.create_container {
-  padding: 0 2rem;
-  padding-bottom: 10px;
 }
 
 .input_user,
 .input_pass:focus {
   box-shadow: none;
   outline: 0px;
-}
-
-.title-create {
-  padding-left: 130px;
 }
 
 .header-missing {
@@ -58,6 +22,49 @@ body {
 
 
 /* UNIVERSAL CODE (USED IN MULTIPLE HTML PAGES) */
+body {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #232020;
+  position: sticky;
+  top: 0;
+  margin: -10px;
+  margin-top: -20px;
+}
+
+.navbar a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.greet-navbar {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  padding-bottom: 0px;
+  padding-top: 6px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
 .form_container {
   align-content: center;
   flex-direction: column;
@@ -66,6 +73,15 @@ body {
 
 .input-group {
   font-size: 2.5vh;
+}
+
+.input-group-img {
+  font-size: 2.5vh;
+}
+
+.input-group-img input{
+  width: 25vh;
+  text-overflow: ellipsis;
 }
 /* end of UNIVERSAL CODE (USED IN MULTIPLE HTML PAGES) */
 
@@ -233,43 +249,49 @@ body {
 
 
 
-/* Everyday User Page */
-.navbar {
-  overflow: hidden;
-  background-color: blueviolet;
-  position: sticky;
-  top: 0;
-  margin: -10px;
-  margin-top: -20px;
-}
-
-.navbar a {
-  float: left;
-  color: white;
+/* create page */
+.user_card_create {
+  width: 50vh;
+  height: max-content;
+  background: #fd7f20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 14px 20px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  text-decoration: none;
-  font-size: 25px;
+  padding: 10px;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  border-radius: 10px;
 }
 
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
+/* .title-create {
+  padding-left: 130px;
+} */
+
+.admin-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.greet-navbar {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  padding-bottom: 0px;
-  padding-top: 6px;
-  text-decoration: none;
-  font-size: 25px;
+.create_container {
+  padding: 0 2rem;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
 }
-/* end of Everyday User Page */
+
+.create_container a {
+  color: #232020;
+  margin-top: 1vh;
+  font-size: 2.5vh;
+}
+/* end of create page */
 
 
 

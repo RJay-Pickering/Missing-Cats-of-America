@@ -14,11 +14,11 @@
     />
   </head>
   <body class="admin-body">
-    <div class="navbar">
+    {% comment %} <div class="navbar">
       <p class="greet-navbar">Hello, {{request.user}}</p>
       <a href="{% url 'home' %}">Home</a>
       <a href="{% url 'logout' %}">Logout</a>
-    </div>
+    </div> {% endcomment %}
 
     <div class="user_card_create">
       <div class="title-create">
@@ -27,9 +27,9 @@
       <div class="form_container">
         <form method="POST" action="" enctype="multipart/form-data">
           {% csrf_token %}
-          <div class="input-group">
+          <div class="input-group-img">
             <p>A Image Of Your Cat</p>
-            <p>{{form.img}}</p>
+            {{form.img}}
           </div>
           <div class="input-group">
             <p>Your Cats {{form.name.label}}</p>
@@ -49,6 +49,7 @@
           </div>
           <div class="create_container">
             <input class="login_btn" type="submit" value="{{time}}" />
+            <a href="{% url 'home' %}">cancel</a>
           </div>
         </form>
       </div>
