@@ -45,58 +45,6 @@ body {
   padding-left: 130px;
 }
 
-.greet-navbar {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  padding-bottom: 0px;
-  padding-top: 4.5px;
-  text-decoration: none;
-  font-size: 25px;
-}
-
-.greet-navbar {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  padding-bottom: 0px;
-  padding-top: 6px;
-  text-decoration: none;
-  font-size: 25px;
-}
-
-.navbar {
-  overflow: hidden;
-  background-color: blueviolet;
-  position: sticky;
-  top: 0;
-  margin: -10px;
-  margin-top: -20px;
-}
-
-.navbar a {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  text-decoration: none;
-  font-size: 25px;
-}
-
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.navbar a.active {
-  background-color: #666;
-  color: white;
-}
-
 .header-missing {
   color: whitesmoke;
 }
@@ -276,6 +224,52 @@ body {
   color: whitesmoke;
 }
 /* end of register screen */
+
+
+
+
+
+
+
+
+
+/* Everyday User Page */
+.navbar {
+  overflow: hidden;
+  background-color: blueviolet;
+  position: sticky;
+  top: 0;
+  margin: -10px;
+  margin-top: -20px;
+}
+
+.navbar a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.greet-navbar {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  padding-bottom: 0px;
+  padding-top: 6px;
+  text-decoration: none;
+  font-size: 25px;
+}
+/* end of Everyday User Page */
 
 
 

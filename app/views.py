@@ -64,8 +64,13 @@ def contact(request):
 def create(request):
 	form = CreateKatForm()
 	if request.method == "POST":
-		print(request.POST)
-		form = CreateKatForm(request.POST)
+		post = request.POST.copy() # to make it mutable
+		post['user'] = request.user.username
+		# and update original POST in the end
+		request.POST = post
+		form = CreateKatForm(request.POST, request.FILES)
+		print(request.user.username)
+		print(form.errors)
 		if form.is_valid():
 			form.save()
 			return redirect("home")
@@ -73,7 +78,6 @@ def create(request):
 	return render(request, "create.html", context)
 
 @login_required(login_url='userlogin')
-@admin_only
 def update(request, pk):
 	cat = KittyCats.objects.get(id=pk)
 	form = CreateKatForm(instance=cat)
@@ -88,7 +92,6 @@ def update(request, pk):
 	return render(request, "create.html", context)
 
 @login_required(login_url='userlogin')
-@admin_only
 def delete(request, pk):
 	item = KittyCats.objects.get(id=pk)
 	if request.method == "POST":

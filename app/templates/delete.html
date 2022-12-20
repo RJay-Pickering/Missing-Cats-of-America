@@ -14,11 +14,11 @@
     />
   </head>
   <body>
-    <p>Are you sure you want to delete {{item}}?</p>
+    <p>Did you find {{item}}?</p>
     <form action="{% url 'delete' item.id %}" method="POST">
       {% csrf_token %}
-      <input type="submit" name="Confirm" />
-      <a href="{% url 'home' %}">Cancel</a>
+      <input type="submit" name="Confirm" value="Yes" />
+      <a href="{% url 'home' %}">No</a>
     </form>
   </body>
 </html>

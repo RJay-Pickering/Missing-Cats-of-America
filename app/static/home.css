@@ -1,20 +1,11 @@
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 .admin_body {
   background-color: black;
-}
-
-.user_body {
-  background-color: rgba(73, 73, 184, 0.966);
-}
-
-.greet-navbar {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  padding-bottom: 0px;
-  padding-top: 6px;
-  text-decoration: none;
-  font-size: 25px;
 }
 
 .navbar {
@@ -22,8 +13,6 @@
   background-color: blueviolet;
   position: sticky;
   top: 0;
-  margin: -10px;
-  margin-top: -20px;
 }
 
 .navbar a {
@@ -76,4 +65,228 @@ tr:nth-child(even) {
 
 .form-title {
   color: #fff;
+}
+
+
+
+
+
+
+
+
+
+/* universal code */
+.greet-navbar {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-decoration: none;
+  font-size: 25px;
+  margin: 0;
+}
+
+#pricing {
+  margin: 3vh;
+  text-align: center;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 50px;
+}
+
+.listing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.125rem solid #000;
+  background-color: #232020;
+}
+
+.animal {
+  width: 100%;
+  object-fit: contain;
+}
+
+.listing h2 {
+  margin: 0;
+  font-size: 5vh;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.listing ul {
+  margin: 0;
+  padding: 0;
+}
+
+.listing li {
+  font-size: 1.125rem;
+  line-height: 1.2;
+  text-align: left;
+  margin-bottom: 0.75rem;
+  list-style: none;
+  text-align: center;
+  margin-left: 0;
+}
+
+.last {
+  padding-bottom: 1rem;
+}
+
+.btn {
+  background-color: #3A3535;
+  text-decoration: none;
+  color: #FF7315;
+  font-size: 1.125rem;
+  width: 10rem;
+  height: 3rem;
+  margin-bottom: 1.25rem;
+  border: 0 solid;
+  border-radius: 0.25rem;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: #FF7315;
+  color: #3A3535;
+}
+
+#pricing p {
+  font-size: 1rem;
+}
+/* end of universal code */
+
+
+
+
+
+
+
+
+
+/* User Home Page */
+.user_body {
+  background-color: #3A3535;
+  color: #FF7315;
+}
+
+.navbar-user {
+  overflow: hidden;
+  background-color: #232020;
+  position: sticky;
+  top: 0;
+}
+
+.navbar-user a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.navbar-user a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar-user a.active {
+  background-color: #666;
+  color: white;
+}
+/* end of User Home Page */
+
+
+
+
+
+
+
+
+
+
+
+/* @media (max-width: 64rem) {
+  #pricing .box {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -1rem;
+  }
+  .listing {
+    width: calc(100% / 2.25);
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  #pricing {
+    padding-top: 4.25rem;
+  }
+  .listing {
+    margin: 0.75rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .box {
+    flex-direction: column;
+    align-items: center;
+  }
+  #pricing > h2 {
+    margin-bottom: 0.85rem;
+    padding-top: 1.2rem;
+  }
+  .listing {
+    width: 80%;
+  }
+  .listing h2 {
+    margin: 0.75rem;
+  }
+  .listing li {
+    float: none;
+    margin: 0 1.25rem 0.75rem 0.5rem;
+  }
+  .btn {
+    width: 10rem;
+    height: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  #pricing p {
+    width: 80%;
+    margin: auto;
+  }
+}
+@media (max-width: 25.875rem) {
+  #pricing > h2 {
+    padding-top: 1.3rem;
+  }
+  .listing {
+    width: 90%;
+  }
+} */
+
+@media screen and (max-width: 300px) {
+  .listing {
+    width: 40vh;
+  }
+}
+
+@media screen and (max-width: 382px) {
+  .navbar-user a {
+    font-size: 5vw;
+  }
+  .greet-navbar {
+    font-size: 5vw;
+  }
 }
