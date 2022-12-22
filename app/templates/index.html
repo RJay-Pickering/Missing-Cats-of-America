@@ -57,7 +57,7 @@
             <a class="btn" href="{% url 'update' cats.id %}">Update</a>
             <div class="btn-front-1">
               <div class="btn-back">
-                <p>Did you find your cat?</p>
+                <p>Are you sure you want to delete {{cats.user}}'s cat?</p>
                 <a href="{% url 'delete' cats.id %}"><button class="yes">Yes</button></a>
                 <button class="no">No</button>
               </div>
