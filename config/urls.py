@@ -30,7 +30,8 @@ urlpatterns = [
     path("contacts/", app.views.contact, name="contact"),
     path("create/", app.views.create, name="create"),
     path("update/<str:pk>/", app.views.update, name="update"),
-    path("delete/<str:pk>/", app.views.delete, name="delete")
+    path("delete/<str:pk>/", app.views.delete, name="delete"),
+    path("your-missing-babys/", app.views.cat_collection, name="your_cat")
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

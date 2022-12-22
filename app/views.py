@@ -94,9 +94,24 @@ def update(request, pk):
 @login_required(login_url='userlogin')
 def delete(request, pk):
 	item = KittyCats.objects.get(id=pk)
-	if request.method == "POST":
-		item.delete()
-		return redirect("home")
+	item.delete()
+	return redirect("home")
+
+# @login_required(login_url='userlogin')
+# def delete(request, pk):
+# 	item = KittyCats.objects.get(id=pk)
+# 	if request.method == "POST":
+# 		item.delete()
+# 		return redirect("home")
 		
-	context={"item": item}
-	return render(request, "delete.html",context)
+# 	context={"item": item}
+# 	return render(request, "delete.html",context)
+
+@login_required(login_url='userlogin')
+def cat_collection(request):
+	context = {
+		'length': KittyCats.objects.count(), 
+		'kats': KittyCats.objects.all(),
+		'apple': KittyCats.objects.filter(user = request.user.username).count()
+	}
+	return render(request, "your-cats.html", context)

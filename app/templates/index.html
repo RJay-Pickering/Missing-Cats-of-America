@@ -12,38 +12,62 @@
       type="image/png"
       href="{% static 'cute-cat.png' %}"
     />
+    <script src="{% static 'home-page.js' %}" defer></script>
   </head>
   <body class="admin_body">
-    <div class="navbar">
-      <p class="greet-navbar">hello, {{request.user}}</p>
+    <div class="navbar-user">
+      <div class="greet-navbar-div"> <section class="hidden_on_change">(admin) {{request.user}}</section></div>
       <a href="{% url 'create' %}">Create</a>
+      <a href="{% url 'your_cat' %}">Your Cats</a>
       <a href="{% url 'logout' %}">Logout</a>
     </div>
     {% comment %} <----------------navbar----------------> {% endcomment %}
-    <div class="col-md-7">
-      <div class="card card-body">
-        <h3 class="header-missing"><center>Missing Cats</center></h3>
-        <table class="info-table">
-          {% if kats is not None %}
-          <tr>
-            <th>Cat Name</th>
-            <th>Description</th>
-            <th>Contact Info</th>
-            <th>Update</th>
-            <th>Delete</th>
-          </tr>
+    <section id="pricing">
+      <h2>All Missing Cats</h2>
+      <div class="box">
+        {% for cats in kats %}
+        <div class="listing">
+          <div class="top">
+            <img class="animal" src="{{cats.img.url}}" alt="users cat">
+          </div>
+          <h2>{{cats.name}}</h2>
+          <ul>
+            <li>Date missing:</li>
+            <li>{{cats.missing}}</li>
+            <li>Description:</li>
+            <li>{{cats.description}}</li>
+            <li>Contact info:</li>
+            <li>{{cats.contact}}</li>
+            <li>Date added:</li>
+            <li>{{cats.date}}</li>
+            <li>Owner:</li>
+            <li class="last">{{cats.user}}</li>
+          </ul>
+          {% if cats.user == request.user.username %}
+            <a class="btn" href="{% url 'update' cats.id %}">Update</a>
+            <div class="btn-front-1">
+              <div class="btn-back">
+                <p>Did you find your cat?</p>
+                <a href="{% url 'delete' cats.id %}"><button class="yes">Yes</button></a>
+                <button class="no">No</button>
+              </div>
+              <div class="btn-front">Cat Found</div>
+            </div>
+          {% else %}
+            <a class="btn" href="{% url 'update' cats.id %}">Update</a>
+            <div class="btn-front-1">
+              <div class="btn-back">
+                <p>Did you find your cat?</p>
+                <a href="{% url 'delete' cats.id %}"><button class="yes">Yes</button></a>
+                <button class="no">No</button>
+              </div>
+              <div class="btn-front">Delete Cat</div>
+            </div>
+            {% comment %} <a class="btn" href="{% url 'delete' cats.id %}">Delete Cat</a> {% endcomment %}
           {% endif %}
-          {% for cats in kats %}
-          <tr>
-            <td>{{cats.name}}</td>
-            <td class="fortnite">{{cats.description}}</td>
-            <td>{{cats.contact}}</td>
-            <td><a href="{% url 'update' cats.id %}">Update</a></td>
-            <td><a href="{% url 'delete' cats.id %}">Delete</a></td>
-          </tr>
-          {% endfor %}
-        </table>
+        </div>
+        {% endfor %}
       </div>
-    </div>
+    </section>
   </body>
 </html>

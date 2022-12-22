@@ -12,11 +12,13 @@
       type="image/png"
       href="{% static 'cute-cat.png' %}"
     />
+    <script src="{% static 'home-page.js' %}" defer></script>
   </head>
   <body class="user_body">
     <div class="navbar-user">
-      <p class="greet-navbar">hello, {{request.user}}</p>
+      <div class="greet-navbar-div"> <section class="hidden_on_change">hello, {{request.user}}</section></div>
       <a href="{% url 'create' %}">Create</a>
+      <a href="{% url 'your_cat' %}">Your Cats</a>
       <a href="{% url 'logout' %}">Logout</a>
     </div>
     {% comment %} <----------------navbar----------------> {% endcomment %}
@@ -68,7 +70,15 @@
           </ul>
           {% if cats.user == request.user.username %}
             <a class="btn" href="{% url 'update' cats.id %}">Update</a>
-            <a class="btn" href="{% url 'delete' cats.id %}">Cat Found</a>
+            <div class="btn-front-1">
+              <div class="btn-back">
+                <p>Did you find your cat?</p>
+                <a href="{% url 'delete' cats.id %}"><button class="yes">Yes</button></a>
+                <button class="no">No</button>
+              </div>
+              <div class="btn-front">Cat Found</div>
+            </div>
+            {% comment %} <a class="btn" href="{% url 'delete' cats.id %}">Cat Found</a> {% endcomment %}
           {% endif %}
         </div>
         {% endfor %}
