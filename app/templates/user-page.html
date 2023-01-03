@@ -18,7 +18,7 @@
     <div class="navbar-user">
       <div class="greet-navbar-div"> <section class="hidden_on_change">hello, {{request.user}}</section></div>
       <a href="{% url 'create' %}">Create</a>
-      <a href="{% url 'your_cat' %}">Your Cats</a>
+      <a href="{% url 'your_cat' %}">Your Pets</a>
       <a href="{% url 'logout' %}">Logout</a>
     </div>
     {% comment %} <----------------navbar----------------> {% endcomment %}
@@ -48,7 +48,7 @@
       </div>
     </div> {% endcomment %}
     <section id="pricing">
-      <h2>All Missing Cats</h2>
+      <h2>All Missing Pets</h2>
       <div class="box">
         {% for cats in kats %}
         <div class="listing">
@@ -60,11 +60,15 @@
             <li>Date missing:</li>
             <li>{{cats.missing}}</li>
             <li>Description:</li>
-            <li>{{cats.description}}</li>
+            <li class="desc-home">{{cats.description}}</li>
             <li>Contact info:</li>
             <li>{{cats.contact}}</li>
             <li>Date added:</li>
             <li>{{cats.date}}</li>
+            <li>Last seen at:</li>
+            <li>{{cats.location}}</li>
+            <li>Type of Pet:</li>
+            <li>{{cats.animal}}</li>
             <li>Owner:</li>
             <li class="last">{{cats.user}}</li>
           </ul>

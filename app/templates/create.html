@@ -28,11 +28,11 @@
         <form method="POST" action="" enctype="multipart/form-data">
           {% csrf_token %}
           <div class="input-group-img">
-            <p>A Image Of Your Cat</p>
+            <p>A Image Of Your Pet</p>
             {{form.img}}
           </div>
           <div class="input-group">
-            <p>Your Cats {{form.name.label}}</p>
+            <p>Your Pets {{form.name.label}}</p>
             <p>{{form.name}}</p>
           </div>
           <div class="input-group">
@@ -40,12 +40,20 @@
             <p>{{form.missing}}</p>
           </div>
           <div class="input-group">
-            <p>{{form.description.label}} Of Your Cat</p>
+            <p>{{form.description.label}} Of Your Pet</p>
             <p>{{form.description}}</p>
           </div>
           <div class="input-group">
             <p>Your {{form.contact.label}} Info</p>
             <p>{{form.contact}}</p>
+          </div>
+          <div class="input-group">
+            <p>Last {{form.location.label}} Seen</p>
+            <p>{{form.location}}</p>
+          </div>
+          <div class="input-group">
+            <p>Type Of {{form.animal.label}}</p>
+            <p>{{form.animal}}</p>
           </div>
           <div class="create_container">
             <input class="login_btn" type="submit" value="{{time}}" />

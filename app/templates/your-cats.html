@@ -22,7 +22,7 @@
       <a href="{% url 'logout' %}">Logout</a>
     </div>
     <section id="pricing">
-      <h2>Your Missing Cats</h2>
+      <h2>Your Missing Pets</h2>
       <div class="box">
         {% for cats in kats %}
           {% if cats.user == request.user.username %}
@@ -35,11 +35,15 @@
                 <li>Date missing:</li>
                 <li>{{cats.missing}}</li>
                 <li>Description:</li>
-                <li>{{cats.description}}</li>
+                <li class="desc-home">{{cats.description}}</li>
                 <li>Contact info:</li>
                 <li>{{cats.contact}}</li>
                 <li>Date added:</li>
                 <li>{{cats.date}}</li>
+                <li>Last seen at:</li>
+                <li>{{cats.location}}</li>
+                <li>Type of Pet:</li>
+                <li>{{cats.animal}}</li>
                 <li>Owner:</li>
                 <li class="last">{{cats.user}}</li>
               </ul>
@@ -58,7 +62,7 @@
           {% endif %}
         {% endfor %}
         {% if apple == 0 %}
-            <p>Out of the {{length}} missing cats in America, You do not have any cats currently missing!</p>
+            <p>Out of the {{length}} missing animals in America, You do not have any pets currently missing!</p>
         {% endif %}
       </div>
     </section>

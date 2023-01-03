@@ -359,6 +359,10 @@ tr:nth-child(even) {
 .btn-front-1[data-direction="left"].is-open {
   transform: rotateY(-180deg);
 }
+
+.desc-home {
+  width: 35vw;
+}
 /* @media (max-width: 64rem) {
   #pricing .box {
     flex-wrap: wrap;
@@ -422,6 +426,10 @@ tr:nth-child(even) {
   .listing {
     width: 40vh;
   }
+
+  .desc-home {
+    width: 60vw;
+  }
 }
 
 @media screen and (max-width: 382px) {
@@ -446,5 +454,11 @@ tr:nth-child(even) {
 @media screen and (min-width: 500px) {
   .hidden_on_change {
     display: contents;
+  }
+}
+
+@media screen and (min-width: 301px) and (max-width: 415px) {
+  .desc-home {
+    width: 50vw;
   }
 }
