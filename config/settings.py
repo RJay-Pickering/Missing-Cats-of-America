@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    "https://missing-cats-of-america-production.up.railway.app/"
+    "missing-cats-of-america-production.up.railway.app"
 ]
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'app/static')]
