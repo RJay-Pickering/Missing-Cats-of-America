@@ -69,8 +69,6 @@ def create(request):
 		# and update original POST in the end
 		request.POST = post
 		form = CreateKatForm(request.POST, request.FILES)
-		print(request.user.username)
-		print(form.errors)
 		if form.is_valid():
 			form.save()
 			return redirect("home")
@@ -82,11 +80,16 @@ def update(request, pk):
 	cat = KittyCats.objects.get(id=pk)
 	form = CreateKatForm(instance=cat)
 	if request.method == "POST":
-		print(request.POST)
+		post = request.POST.copy() # to make it mutable
+		post['user'] = request.user.username
+		# and update original POST in the end
+		request.POST = post
 		form = CreateKatForm(request.POST, instance=cat)
 		if form.is_valid():
 			form.save()
 			return redirect("home")
+		else:
+			print(form.errors)
 
 	context = {"form": form, "time":"Update"}
 	return render(request, "create.html", context)
